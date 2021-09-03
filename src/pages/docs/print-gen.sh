@@ -1,0 +1,1 @@
+perl -lne "print for /pages\['(.*?)'\]/g" ../../navs/documentation.js | awk "{printf \"import Comp%d from './%s.mdx';\n\n<Comp%d />\n\n\", NR, \$0, NR}"
